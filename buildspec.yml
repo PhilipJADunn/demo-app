@@ -1,0 +1,27 @@
+version : 0.2
+
+env:
+  variables:
+    TEMPLATE_FILE: 'template.yml'
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+
+  pre_build:
+    commands:
+      - pip install awscli==1.19.*
+      - aws --version
+
+  build:
+    commands:
+      - sam build
+      - sam package --template-file $TEMPLATE_FILE --output-template-file packaged-template.yml
+                    --image-repository HelloWorldFunction=658251713809.dkr.ecr.eu-west-2.amazonaws.com/demo-app
+
+artifacts:
+  type: zip
+  files:
+    - packaged-template.yml
+    - template_imageprocessor_eu-west-1.yml

@@ -1,7 +1,0 @@
-version=0.1
-
-[default.package.parameters]
-image_repository = "658251713809.dkr.ecr.eu-west-2.amazonaws.com/demo-app"
-
-[default.deploy.parameters]
-image_repository = "658251713809.dkr.ecr.eu-west-2.amazonaws.com/demo-app"

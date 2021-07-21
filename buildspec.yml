@@ -25,4 +25,3 @@ artifacts:
   type: zip
   files:
     - template.yaml
-    - template_imageprocessor_eu-west-1.yml

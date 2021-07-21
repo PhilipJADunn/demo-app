@@ -15,6 +15,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       PackageType: Image
+      ImageUri: 658251713809.dkr.ecr.eu-west-2.amazonaws.com/demo-app:latest
       Events:
         HelloWorld:
           Type: Api

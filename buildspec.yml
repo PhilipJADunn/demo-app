@@ -2,7 +2,7 @@ version : 0.2
 
 env:
   variables:
-    TEMPLATE_FILE: 'template.yml'
+    TEMPLATE_FILE: 'template.yaml'
 
 phases:
   install:

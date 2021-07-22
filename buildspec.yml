@@ -17,9 +17,9 @@ phases:
   build:
     commands:
       - sam build
-      - ls -l
       - sam package --template-file template.yaml --output-template-file packaged-template.yaml --s3-bucket my-test-app-phil-bucket
                     --image-repository 658251713809.dkr.ecr.eu-west-2.amazonaws.com/demo-app
+      - cat packaged-template.yaml
 
 artifacts:
   type: zip

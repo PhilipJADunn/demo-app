@@ -16,9 +16,14 @@ phases:
 
   build:
     commands:
+      - aws ecr get-login-password --region eu-west-2 | docker login --username AWS --password-stdin 658251713809.dkr.ecr.eu-west-2.amazonaws.com/layer
       - sam build
       - sam package --template-file .aws-sam/build/template.yaml --output-template-file packaged-template.yaml
                     --image-repository $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/demo-app
+                    
+  post_build:
+    commands:
+      - rm -f /root/.docker/config.json
                     
 artifacts:
   type: zip

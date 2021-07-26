@@ -7,10 +7,10 @@ RUN npm install
 # Command can be overwritten by providing a different command in the template directly.
 CMD ["app.lambdaHandler"]
 
-FROM public.ecr.aws/x0k1v7v4/image/magick/base:latest AS shared-lib-layer
+FROM 658251713809.dkr.ecr.eu-west-2.amazonaws.com/layer:latest AS layer
 
 # Layer code
 
 WORKDIR /opt
 
-COPY --from=shared-lib-layer /opt/ .
+COPY --from=layer /opt/ .

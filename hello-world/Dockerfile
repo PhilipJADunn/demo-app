@@ -6,3 +6,11 @@ RUN npm install
 
 # Command can be overwritten by providing a different command in the template directly.
 CMD ["app.lambdaHandler"]
+
+FROM public.ecr.aws/myrepo/shared-lib-layer:1 AS shared-lib-layer
+
+# Layer code
+
+WORKDIR /opt
+
+COPY --from=shared-lib-layer /opt/ .

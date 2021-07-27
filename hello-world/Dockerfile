@@ -6,7 +6,7 @@ FROM 658251713809.dkr.ecr.eu-west-2.amazonaws.com/layer:latest AS layer
 WORKDIR /opt
 
 FROM layer AS layer2
-COPY --from=layer /opt/ .
+COPY --from=layer2 /opt/ .
 
 FROM public.ecr.aws/lambda/nodejs:14
 
